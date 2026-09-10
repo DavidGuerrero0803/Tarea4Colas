@@ -36,4 +36,20 @@ public class ColaDoble<T> {
         cola[inicio] = dato;
     }
 
+    public void insertarFin(T dato) {
+        if (fin == cola.length - 1) {
+            System.out.println("Desbordamiento");
+            return;
+        }
+
+        if (inicio == -1) {
+            inicio = 0;
+            fin = 0;
+        } else {
+            fin++;
+        }
+
+        cola[fin] = dato;
+    }
+
 }
