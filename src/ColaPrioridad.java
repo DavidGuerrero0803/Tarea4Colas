@@ -38,4 +38,20 @@ public class ColaPrioridad<T> {
         elementos++;
     }
 
+    public T eliminarDato() {
+        if (elementos == 0) {
+            System.out.println("Subdesbordamiento");
+            return null;
+        }
+
+        T elemento = cola[0];
+        for (int i = 0; i < elementos - 1; i++) {
+            cola[i] = cola[i + 1];
+            prioridades[i] = prioridades[i + 1];
+        }
+        cola[elementos - 1] = null;
+        elementos--;
+        return elemento;
+    }
+
 }
