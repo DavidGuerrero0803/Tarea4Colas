@@ -52,4 +52,42 @@ public class ColaDoble<T> {
         cola[fin] = dato;
     }
 
+    public T eliminarInicio() {
+        if (inicio == -1) {
+            System.out.println("Subdesbordamiento");
+            return null;
+        }
+
+        T dato = cola[inicio];
+        cola[inicio] = null;
+
+        if (inicio == fin) {
+            inicio = -1;
+            fin = -1;
+        } else {
+            inicio++;
+        }
+
+        return dato;
+    }
+
+    public T eliminarFin() {
+        if (fin == -1) {
+            System.out.println("Subdesbordamiento");
+            return null;
+        }
+
+        T dato = cola[fin];
+        cola[fin] = null;
+
+        if (inicio == fin) {
+            inicio = -1;
+            fin = -1;
+        } else {
+            fin--;
+        }
+
+        return dato;
+    }
+
 }
